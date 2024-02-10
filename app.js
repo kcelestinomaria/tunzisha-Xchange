@@ -1,29 +1,45 @@
+// app.js
 const express = require('express');
 const bodyParser = require('body-parser');
+const sequelize = require('./config/database');
+const Patient = require('./models/patient');
 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
 
+// Sync Sequelize models with the database
+sequelize.sync().then(() => {
+  console.log('Database and tables created!');
+});
+
 // Define API endpoints for healthcare data
-app.get('/api/patient/:patientId', (req, res) => {
-  // Implement logic to retrieve patient data by ID
+app.get('/api/patient/:patientId', async (req, res) => {
   const patientId = req.params.patientId;
-  // Fetch data from your database or source
-  const patientData = /* Implement logic to fetch patient data */;
-  res.json(patientData);
+  try {
+    const patient = await Patient.findByPk(patientId);
+    if (patient) {
+      res.json(patient);
+    } else {
+      res.status(404).json({ error: 'Patient not found' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
-app.post('/api/patient', (req, res) => {
-  // Implement logic to create/update patient data
-  const newPatientData = req.body;
-  // Save data to your database or source
-  // Respond with the updated patient data or a success message
-  res.json(newPatientData);
+app.post('/api/patient', async (req, res) => {
+  const { name, age } = req.body;
+  try {
+    const newPatient = await Patient.create({ name, age });
+    res.status(201).json(newPatient);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
-
-// Add more endpoints as needed for specific functionalities
 
 app.listen(port, () => {
   console.log(`Tunzisha Xchange API is running at http://localhost:${port}`);
