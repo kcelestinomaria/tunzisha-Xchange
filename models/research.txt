@@ -1,0 +1,39 @@
+The data commonly shared between hospitals depends on various factors, including the purpose of sharing, regulatory requirements, and collaborative initiatives. However, there are several types of data that are commonly shared for the purpose of patient care, public health, research, and healthcare management. Here are some examples:
+
+1. **Patient Demographics:**
+   - Basic information about patients, including names, addresses, dates of birth, and contact details.
+
+2. **Medical History:**
+   - Past medical conditions, surgeries, allergies, and medication history to provide a comprehensive view of a patient's health.
+
+3. **Laboratory Results:**
+   - Test results, including blood tests, imaging studies, and pathology reports, are often shared to facilitate the continuity of care.
+
+4. **Medication Records:**
+   - Information about prescribed medications, dosages, and administration instructions.
+
+5. **Discharge Summaries:**
+   - Summaries of a patient's hospital stay, including diagnoses, treatments, and recommendations for post-discharge care.
+
+6. **Immunization Records:**
+   - Information about vaccinations received by patients to ensure up-to-date immunization status.
+
+7. **Appointment Scheduling and Visit History:**
+   - Records of scheduled appointments, canceled appointments, and a history of healthcare visits.
+
+8. **Referral Information:**
+   - Information about patient referrals to specialists or other healthcare providers.
+
+9. **Public Health Data:**
+   - Data related to infectious diseases, outbreaks, and other public health concerns that may require collaboration between healthcare institutions and public health agencies.
+
+10. **Billing and Administrative Data:**
+    - Information related to billing and insurance claims, as well as administrative data for managing healthcare operations.
+
+11. **Research Data:**
+    - De-identified data used for research purposes, with appropriate consent and privacy measures.
+
+12. **Emergency Medical Services (EMS) Data:**
+    - Data related to emergency responses and pre-hospital care provided by EMS personnel.
+
+It's important to note that the sharing of health information is subject to strict privacy and security regulations, such as the Health Insurance Portability and Accountability Act (HIPAA) in the United States or similar regulations in other countries. Patient consent and data security measures are crucial considerations in any data-sharing arrangement. Additionally, interoperability standards, such as Fast Healthcare Interoperability Resources (FHIR), play a role in facilitating data exchange between healthcare systems.
