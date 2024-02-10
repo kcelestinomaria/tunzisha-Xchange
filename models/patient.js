@@ -12,7 +12,7 @@ const Patient = sequelize.define('Patient', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  secondName: {
+  lastName: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -20,9 +20,28 @@ const Patient = sequelize.define('Patient', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  dateOfBirth: {
+  gender: {
+    type: DataTypes.CHAR // F - Female; M - Male
+  },
+  phoneNumber: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  nextOfKin: {
     type: DataTypes.STRING,
     allowNull: false,
+  },
+  inpatient: {
+    type: DataTypes.BOOLEAN,
+  },
+  symptoms: {
+    type: DataTypes.STRING,
+  },
+  diagnosis: {
+    type: DataTypes.STRING,
+  },
+  prescription: {
+    type: DataTypes.STRING,
   }
   // Add more fields as needed
 });
