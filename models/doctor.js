@@ -5,12 +5,20 @@ module.exports = (sequelize, DataTypes) => {
   class Doctor extends Model {
     static associate(models) {
       Doctor.hasMany(models.Patient, { foreignKey: 'doctorId' });
+      Doctor.belongsToMany(models.Patient, {through: 'DoctorPatient' });
     }
   }
   Doctor.init(
     {
-      name: DataTypes.STRING,
+      doctorId: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      firstName: DataTypes.STRING,
+      lastName: DataTypes.STRING,
       specialization: DataTypes.STRING,
+      allowNull: false,
     },
     {
       sequelize,
@@ -19,3 +27,4 @@ module.exports = (sequelize, DataTypes) => {
   );
   return Doctor;
 };
+
