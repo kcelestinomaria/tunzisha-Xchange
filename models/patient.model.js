@@ -8,7 +8,11 @@ const Patient = sequelize.define('Patient', {
     autoIncrement: true,
     primaryKey: true,
   },
-  name: {
+  firstName: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  secondName: {
     type: DataTypes.STRING,
     allowNull: false,
   },
