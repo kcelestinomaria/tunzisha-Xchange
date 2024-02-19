@@ -2,16 +2,19 @@
   "name": "tunzisha-xchange",
   "version": "1.0.0",
   "description": "Tunzisha Xchange API",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node app.js",
+    "dev": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Celestino Kariuki",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
+    "nodemon": "^3.0.3",
     "sequelize": "^6.36.0",
     "sequelize-cli": "^6.6.2",
     "sqlite3": "^5.1.7"
