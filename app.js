@@ -1,19 +1,17 @@
 // app.js
 const express = require("express");
 const bodyParser = require("body-parser");
-const sequelize = require("./config/database"); // https://sequelize.org/
+const mongoose = require("mongoose");
+
+
 const Patient = require("./models/patient.model.js");
 
 const app = express();
-const port = 3000;
+//const port = 3000;
 
 // set up middleware to use JSON
 app.use(bodyParser.json());
 
-// first page, simple text
-app.get("/", async (req, res) => {
-  console.log("Hello World!");
-});
 
 // POST
 app.post("/api/patient", async (req, res) => {
@@ -43,10 +41,16 @@ app.get("/api/patient/:patientId", async (req, res) => {
   }
 });
 
-// Sync Sequelize models with the database
-sequelize.sync().then(() => {
-  console.log("Database and tables created!");
-  app.listen(port, () => {
-    console.log(`Tunzisha Xchange API is running at http://localhost:${port}`);
+mongoose
+  .connect(
+    "mongodb+srv://celestino127:C0mpa$$i0n127@cluster0.5qsdpkx.mongodb.net/Simple-Node-API?retryWrites=true&w=majority"
+  )
+  .then(() => {
+    console.log("connected to the database!");
+    app.listen(3000, () => {
+      console.log("Server running on port 3000");
+    });
+  })
+  .catch(() => {
+    console.log("connection failed!");
   });
-});
